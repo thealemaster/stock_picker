@@ -15,6 +15,15 @@ def calculate_profit (stockList) :
                         return max(stockList) - stockList[0]
                 else:
                         return max(stockList) - stockList[1]
+                
+        if stockList.index(max(stockList)) == 3:
+                if stockList[0] <= stockList[1]:
+                        return max(stockList) - stockList[0]
+                else:
+                        if stockList[1] <= stockList[2]:
+                                return max(stockList) - stockList[1]
+                        else:
+                                return max(stockList) - stockList[2] 
 
         return max(stockList) - min (stockList)
 
