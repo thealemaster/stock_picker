@@ -3,7 +3,7 @@ import unittest
 from stock_picker import calculate_profit
 
 class TestProfitCalculation (unittest.TestCase):
-    def test_no__returns_zero(self):
+    def test_no_solution_returns_zero(self):
         price_list = [5, 4, 3, 2, 1]
         result = calculate_profit (price_list)
         self.assertEqual (result, 0)
@@ -22,7 +22,11 @@ class TestProfitCalculation (unittest.TestCase):
         price_list = [4, 3, 2, 5, 1]
         result = calculate_profit (price_list)
         self.assertEqual (result, 3)
-        
+
+    def test_all_values_equal_returns_zero(self):
+        price_list = [5, 5, 5, 5, 5]
+        result = calculate_profit (price_list)
+        self.assertEqual (result, 0)
 
 if __name__ == '__main__':
     unittest.main()
